@@ -9,6 +9,9 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    //MARK: - PROPERTIES
+    
+    //MARK: - FETCHING DATA
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -16,32 +19,7 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
 
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }  //: End of List
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
-        }
-    }
-
+    //MARK: - FUNCTIONS
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
@@ -72,15 +50,36 @@ struct ContentView: View {
             }
         }
     }
+    
+    //MARK: - BODY
+    var body: some View {
+        NavigationView {
+            List {
+                ForEach(items) { item in
+                    NavigationLink {
+                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                    } label: {
+                        Text(item.timestamp!, formatter: itemFormatter)
+                    }
+                }
+                .onDelete(perform: deleteItems)
+            }  //: End of List
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    EditButton()
+                }
+                ToolbarItem {
+                    Button(action: addItem) {
+                        Label("Add Item", systemImage: "plus")
+                    }
+                }
+            }
+            Text("Select an item")
+        }
+    }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
+//MARK: - PREVIEW
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)

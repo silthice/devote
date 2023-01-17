@@ -13,6 +13,7 @@
 		80C7347329765DBF00E68222 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C7347229765DBF00E68222 /* Preview Assets.xcassets */; };
 		80C7347529765DBF00E68222 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C7347429765DBF00E68222 /* Persistence.swift */; };
 		80C7347829765DBF00E68222 /* Devote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80C7347629765DBF00E68222 /* Devote.xcdatamodeld */; };
+		80C7349329767A2B00E68222 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C7349229767A2B00E68222 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		80C7348629765F4F00E68222 /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 		80C7348729765F4F00E68222 /* sound-tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-tap.mp3"; sourceTree = "<group>"; };
 		80C7348D2976604000E68222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		80C7349229767A2B00E68222 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		80C7348A29765F9600E68222 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				80C7349229767A2B00E68222 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80C7349329767A2B00E68222 /* Constants.swift in Sources */,
 				80C7347529765DBF00E68222 /* Persistence.swift in Sources */,
 				80C7346E29765DBC00E68222 /* ContentView.swift in Sources */,
 				80C7347829765DBF00E68222 /* Devote.xcdatamodeld in Sources */,
